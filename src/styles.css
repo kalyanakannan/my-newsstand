@@ -5,14 +5,43 @@
  */
 
 body {
-    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    padding-top: 70px; 
+    font-family: 'Lato', sans-serif;
+    background-color: beige;
 }
 
 footer {
     margin: 50px 0;
 }
 
+.card
+{
+	background-color: #fff;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
 .row-gap-huge
 {
 	margin-bottom: 20px;
+}
+
+.source-card
+{
+	font-size: 16px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.news-card
+{
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.news-card:hover
+{
+	 box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+a:hover
+{
+	text-decoration: none;
 }

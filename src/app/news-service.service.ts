@@ -21,8 +21,14 @@ export class NewsServiceService {
 	}
 	getNews(source,sortby)
 	{
-		return this.http.get(this.newsApiURL + "articles?source=" +source+"&sortBy="+sortby+"&apiKey="+this.token)
+		// "&sortBy="+sortby+
+		return this.http.get(this.newsApiURL + "articles?source=" +source+"&apiKey="+this.token)
 		.catch(this.handleError);
+	}
+
+	getNewsFromMultipleSources(soruces,sortby)
+	{
+
 	}
 
 	getSources()

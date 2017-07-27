@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">My Personal News Stand</a>
+                 <a class="navbar-brand" href="#">My Personal News Stand</a>
             </div>
             
             <!-- /.navbar-collapse -->
@@ -18,7 +18,7 @@
     </nav>
 
     <!-- Page Content -->
-    <div class="container">
+    <div class="container card">
 
         <!-- Page Heading -->
         <div class="row">
@@ -28,27 +28,26 @@
         </div>
         <!-- /.row -->
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-3 source-card">
               <div class="checkbox" *ngFor="let source of sources">
-                <label><input type="checkbox" value="{{source.id}}">{{source.name}}</label>
+                <label><input type="radio" value="{{source.id}}" (change)="onSourceChange($event)" name="sources[]">{{source.name}}</label>
               </div>
             </div>
-            <div class="col-md-10">
-              <div class="row row-gap-huge" *ngFor="let article of news">
+            <div class="col-md-9">
+              <div class="row row-gap-huge news-card" *ngFor="let article of news">
                 <div class="col-md-3">
-                    <a href="#">
-                        <img class="img-responsive" src="{{article.urlToImage}}" alt="">
+                    <a href="{{article.url}}">
+                        <img class="img-responsive" src="{{article.urlToImage}}" alt="{{article.title}}">
                     </a>
                 </div>
                 <div class="col-md-9">
                     <h3>
                       <a href="{{article.url}}">{{article.title}}</a>
                     </h3>
-                    <h4>by {{article.author}} on {{article.publishedAt | date:'medium' }}</h4>
+                    <h5>by <strong>{{article.author}}</strong> on <strong>{{article.publishedAt | date:'medium' }}</strong></h5>
                     <p>{{article.description}}</p>
                     <hr>
                 </div>
-                <hr>
               </div>
             </div>
         </div>
