@@ -34,7 +34,7 @@ export class NewsServiceService {
 	getSources()
 	{
 		
-		return this.http.get(this.newsApiURL + "sources?language=en")
+		return this.http.get(this.newsApiURL + "sources")
 		.catch(this.handleError);
 	}
 

@@ -30,11 +30,12 @@
         <div class="row">
             <div class="col-md-3 source-card">
               <div class="checkbox" *ngFor="let source of sources">
-                <label><input type="radio" value="{{source.id}}" (change)="onSourceChange($event)" name="sources[]">{{source.name}}</label>
+                <label><input type="checkbox" value="{{source.id}}" (change)="onSourceChange($event)" name="sources[]">{{source.name}}</label>
               </div>
             </div>
             <div class="col-md-9">
-              <div class="row row-gap-huge news-card" *ngFor="let article of news">
+              <section *ngFor="let articles of news">
+              <div class="row row-gap-huge news-card" *ngFor="let article of articles">
                 <div class="col-md-3">
                     <a href="{{article.url}}">
                         <img class="img-responsive" src="{{article.urlToImage}}" alt="{{article.title}}">
@@ -49,6 +50,7 @@
                     <hr>
                 </div>
               </div>
+              </section>
             </div>
         </div>
 
