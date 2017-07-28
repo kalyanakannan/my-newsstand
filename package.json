@@ -8,7 +8,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy:gh": "sudo ng build --prod --base-href='https://kalyanakannan.github.io/my-newsstand/' && sudo ngh"
   },
   "private": true,
   "dependencies": {
