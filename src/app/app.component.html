@@ -1,58 +1,30 @@
-   <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                 <a class="navbar-brand" href="#">My Personal News Stand</a>
-            </div>
-            
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+        </button>
+        <a class="navbar-brand page-scroll" [routerLink]="['/']">News Stand</a>
+    </div>
 
-    <!-- Page Content -->
-    <div class="container card">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+              <a class="page-scroll" [routerLink]="['/sources']">Sources</a>
+          </li>
+          <li>
+              <a class="page-scroll" [routerLink]="['/headlines']">Headlines</a>
+          </li>
+        </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>
+<router-outlet></router-outlet>
 
-        <!-- Page Heading -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Headlines</h1>
-            </div>
-        </div>
-        <!-- /.row -->
-        <div class="row">
-            <div class="col-md-3 source-card">
-              <div class="checkbox" *ngFor="let source of sources">
-                <label><input type="checkbox" value="{{source.id}}" (change)="onSourceChange($event)" name="sources[]">{{source.name}}</label>
-              </div>
-            </div>
-            <div class="col-md-9">
-              <section *ngFor="let articles of news">
-              <div class="row row-gap-huge news-card" *ngFor="let article of articles">
-                <div class="col-md-3">
-                    <a href="{{article.url}}">
-                        <img class="img-responsive" src="{{article.urlToImage}}" alt="{{article.title}}">
-                    </a>
-                </div>
-                <div class="col-md-9">
-                    <h3>
-                      <a href="{{article.url}}">{{article.title}}</a>
-                    </h3>
-                    <h5>by <strong>{{article.author}}</strong> on <strong>{{article.publishedAt | date:'medium' }}</strong></h5>
-                    <p>{{article.description}}</p>
-                    <hr>
-                </div>
-              </div>
-              </section>
-            </div>
-        </div>
 
        
 

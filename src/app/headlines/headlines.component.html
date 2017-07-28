@@ -1,0 +1,37 @@
+
+    <!-- Page Content -->
+    <div class="container card">
+
+		<!-- Page Heading -->
+		<div class="row">
+		    <div class="col-lg-12">
+		        <h1 class="page-header">Headlines</h1>
+		    </div>
+		</div>
+		<!-- /.row -->
+		<div class="row">
+		    <div class="col-md-3 source-card">
+		      <div class="checkbox" *ngFor="let source of sources">
+		        <label><input type="checkbox" value="{{source.id}}" (change)="onSourceChange($event)" name="sources[]">{{source.name}}</label>
+		      </div>
+		    </div>
+		    <div class="col-md-9">
+		      <section *ngFor="let articles of news">
+		      <div class="row news-card" *ngFor="let article of articles">
+		        <div class="col-md-3">
+		            <a href="{{article.url}}">
+		                <img class="img-responsive" src="{{article.urlToImage}}" alt="{{article.title}}">
+		            </a>
+		        </div>
+		        <div class="col-md-9">
+		            <h3>
+		              <a href="{{article.url}}">{{article.title}}</a>
+		            </h3>
+		            <h5>by <strong>{{article.author}}</strong> on <strong>{{article.publishedAt | date:'medium' }}</strong></h5>
+		            <p>{{article.description}}</p>
+		            <hr>
+		        </div>
+		      </div>
+		      </section>
+		    </div>
+		</div>
