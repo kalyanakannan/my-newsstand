@@ -4,6 +4,11 @@ body {
     background-color: beige;
 }
 
+.hedline-section
+{
+	padding: 0px;
+}
+
 footer {
     margin: 50px 0;
 }
