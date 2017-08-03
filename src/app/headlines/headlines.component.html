@@ -16,8 +16,8 @@
 		      </div>
 		    </div>
 		    <div class="col-md-9">
-		      <section class="hedline-section" *ngFor="let articles of news">
-		      <div class="row news-card" *ngFor="let article of articles">
+		      
+		      <div class="row news-card" *ngFor="let article of news">
 		        <div class="col-md-3">
 		            <a href="{{article.url}}">
 		                <img class="img-responsive" src="{{article.urlToImage}}" alt="{{article.title}}">
@@ -32,6 +32,6 @@
 		            <hr>
 		        </div>
 		      </div>
-		      </section>
+		      
 		    </div>
 		</div>

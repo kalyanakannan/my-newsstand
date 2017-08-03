@@ -8,7 +8,7 @@ import { NewsServiceService } from '../news-service.service';
 export class HeadlinesComponent implements OnInit {
 
   news:any[];
-  sources:any[];
+  sources:object[];
   private userSources: string[] = [];
   constructor(private _newsService:NewsServiceService) {
    }
@@ -16,7 +16,7 @@ export class HeadlinesComponent implements OnInit {
   ngOnInit() {
     this._newsService.getNews("the-next-web","latest")
     .subscribe(news => {
-    	this.news = JSON.parse(news._body).articles;
+    	this.news.push(JSON.parse(news._body).articles);
     }); 
 
     this._newsService.getSources()
@@ -38,11 +38,12 @@ export class HeadlinesComponent implements OnInit {
   		this.userSources.push($event.target.value);
   		this.news = [];
   		this.userSources = this.userSources.reverse();
-  		console.log(this.userSources);
   		for (let source of this.userSources) {
 		    this._newsService.getNews(source,"latest")
 		    .subscribe(news => {
+          console.log(JSON.parse(news._body).articles);
 		    	this.news.push(JSON.parse(news._body).articles);
+          console.log(this.news);
 		    });
 		}
   	}
@@ -63,3 +64,4 @@ export class HeadlinesComponent implements OnInit {
   }
 
 }
+
